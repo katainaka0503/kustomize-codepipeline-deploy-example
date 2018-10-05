@@ -1,0 +1,9 @@
+bases:
+- ../../base
+patchesStrategicMerge:
+- patch.yaml
+- healthcheck_patch.yaml
+- memorylimit_patch.yaml
+namePrefix: prod-
+commonLabels:
+  env: prod

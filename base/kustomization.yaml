@@ -1,0 +1,10 @@
+resources:
+- service.yaml
+- deployment.yaml
+configMapGenerator:
+- files:
+  - application.properties
+  - application-prod.properties
+  name: demo-configmap
+patchesStrategicMerge:
+- patch.yaml

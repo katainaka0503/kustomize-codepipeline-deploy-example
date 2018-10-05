@@ -1,0 +1,9 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - aws eks update-kubeconfig --name ${EKS_CLUSTER_NAME}
+  build:
+    commands:
+      - kustomize build overlays/${KUSTOMIZE_OVERLAY} | kubectl apply -f -
